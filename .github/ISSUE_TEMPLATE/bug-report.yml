@@ -1,0 +1,47 @@
+name: Bug report / Сообщить об ошибке
+description: Report a reproducible issue with APFS Rescue Lab tools
+title: "[Bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public report. Do not post original disk images, personal file paths, user names, private data, keys, serials or UUIDs. Prefer synthetic test cases.
+  - type: input
+    id: command
+    attributes:
+      label: Tool and command (sanitized) / Утилита и команда (обезличенно)
+      placeholder: python3 apfs_rescue.py analyze --source /path/to/test.raw
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS / Python version
+      placeholder: macOS 10.15, Python 3.9
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / Ожидаемый результат
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result / Фактический результат
+      description: Remove identifying paths and any private details.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Steps or synthetic reproducer / Шаги воспроизведения
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy / Конфиденциальность
+      options:
+        - label: I have removed private data, secrets and disk images from this report.
+          required: true
